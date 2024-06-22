@@ -13,7 +13,7 @@ const DownloadAppPage = () => {
         </div>
 
         <div>
-          <p className="text-[#434547] mb-1 font-light">Seems like you don't have Flash app.</p>
+          <p className="text-[#434547] mb-1 font-light">Seems like you don&apos;t have Flash app.</p>
           <p>Scan this qr code to download it, create an account and pay the easy way!</p>
         </div>
 
@@ -24,7 +24,7 @@ const DownloadAppPage = () => {
         <img 
           src={QrCodeImage} 
           alt="" 
-          className="w-[250px] h-[210px] mt-11"
+          className="w-[250px] h-[210px] mt-12"
           />
       </div>
     </div>

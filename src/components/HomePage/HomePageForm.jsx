@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { checkIfUserIsRegistered } from "../../Services/UsersService";
+import { authenticateUser, checkIfUserIsRegistered } from "../../Services/UsersService";
 import { useNavigate } from "react-router-dom";
 import validatePhoneNumber from "../../validations/phoneNumberValidator";
 import Spinner from "../Spinner";
@@ -48,7 +48,18 @@ const HomePageForm = () => {
                     if (data.length === 0) {
                         navigate("/download-app");
                     } else if (data && data.length > 0) {
-                        navigate("/payment");
+                        debugger
+                        authenticateUser()
+                        .then((response) => {
+                            debugger
+                            if(response.access_token) {
+                                navigate("/payment");
+                            }
+                        })
+                        .catch((err) => {
+                            return err
+                        });
+                        
                     }
                 })
                 .catch((error) => {
