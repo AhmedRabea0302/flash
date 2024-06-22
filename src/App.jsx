@@ -25,10 +25,3 @@ const App = () => {
 }
 
 export default App
-
-
-// <Navbar />
-//         <Hero />
-//         <HomeCards />
-//         <JobListing />
-//         <ViewAllJobs />
