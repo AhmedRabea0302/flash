@@ -1,14 +1,64 @@
 {
     "registered_users": [
-        "01587741912",
-        "01298486988",
-        "01590703150", 
-        "01095971344",
-        "01199361079",
-        "01118317909",
-        "01205207929",
-        "01111791085",
-        "01138265387",
-        "01516783485"
+        {
+            "id": 1,
+            "phone_number": "01587741912",
+            "first_name": "Ahmed",
+            "last_name": "Moatez"
+        },
+        {
+            "id": 2,
+            "phone_number": "01298486988",
+            "first_name": "Erick",
+            "last_name": "Gordon"
+        },
+        {
+            "id": 3,
+            "phone_number": "01590703150",
+            "first_name": "Sherien",
+            "last_name": "Mohamed"
+        },
+        {
+            "id": 4,
+            "phone_number": "01095971344",
+            "first_name": "Abdullah",
+            "last_name": "Rabeaa"
+        },
+        {
+            "id": 5,
+            "phone_number": "01199361079",
+            "first_name": "Amal",
+            "last_name": "Nassar"
+        },
+        {
+            "id": 6,
+            "phone_number": "01118317909",
+            "first_name": "Mazen",
+            "last_name": "Ahmed"
+        },
+        {
+            "id": 7,
+            "phone_number": "01516783485",
+            "first_name": "Ehab",
+            "last_name": "Tawfeeq"
+        },
+        {
+            "id": 8,
+            "phone_number": "01138265387",
+            "first_name": "Mary",
+            "last_name": "Erik"
+        },
+        {
+            "id": 9,
+            "phone_number": "01111791085",
+            "first_name": "Waleed",
+            "last_name": "Medhat"
+        },
+        {
+            "id": 10,
+            "phone_number": "01205207929",
+            "first_name": "AbdelAziz",
+            "last_name": "Matar"
+        }
     ]
 }
