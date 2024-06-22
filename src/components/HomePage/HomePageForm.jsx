@@ -1,6 +1,9 @@
 
 import { useState } from "react";
 import { RiDiscountPercentFill } from "react-icons/ri";
+import { checkIfUserIsRegistered } from "../../Services/UsersService";
+import Spinner from "../Spinner";
+import { useNavigate } from "react-router-dom";
 
 const HomePageForm = () => {
 
@@ -8,6 +11,9 @@ const HomePageForm = () => {
     const initialValues = {
         phone_number: ''
     };
+
+    const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
 
     // Form state
     const [formFields, setFormFields] = useState(initialValues);
@@ -25,6 +31,32 @@ const HomePageForm = () => {
         e.preventDefault();
 
         console.log(formFields);
+
+        setIsLoading(true);
+
+        try {
+            // Check if user is registered
+            await checkIfUserIsRegistered(formFields.phone_number)
+            .then((data) => {
+                debugger
+                if( data.length == 0) {
+                    debugger
+                    navigate("/download-app")
+                }
+                if (data && data.length > 0) {
+                    debugger
+                    navigate("/payment")
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                setIsLoading(false);
+            });
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false);
+        }
     }
 
   return (
@@ -50,7 +82,10 @@ const HomePageForm = () => {
             </div>
         </div>
 
-        <button className="mt-12 font-semibold rounded-xl bg-[#2C2C84] hover:bg-indigo-800 text-white py-2 px-36">Next</button>
+        { isLoading ?
+            <Spinner loading={true} />
+            : (<button className="mt-12 font-semibold rounded-xl bg-[#2C2C84] hover:bg-indigo-800 text-white py-2 px-36">Next</button>) 
+        }
       </form>
     </div>
   )
