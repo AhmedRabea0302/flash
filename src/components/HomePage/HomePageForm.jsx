@@ -1,10 +1,10 @@
 
 import { useEffect, useState } from "react";
-import { RiDiscountPercentFill } from "react-icons/ri";
 import { checkIfUserIsRegistered } from "../../Services/UsersService";
 import { useNavigate } from "react-router-dom";
 import validatePhoneNumber from "../../validations/phoneNumberValidator";
 import Spinner from "../Spinner";
+import { DiscountComponent } from "../DiscountComponent";
 
 const HomePageForm = () => {
 
@@ -90,10 +90,7 @@ const HomePageForm = () => {
             }
             <small className="text-[#f12]">{formErrors.phone_number}</small>
 
-            <div className="flex flex-row align-center mt-6 text-[#2C2C84] bg-[#CBF15E] bg-opacity-30 w-10/12 py-2 px-2 rounded-md">
-                <RiDiscountPercentFill className="mr-1"/>
-                <p className="text-xs font-[600] font-raleway">Get 20% off on your first payment </p>
-            </div>
+            <DiscountComponent />
         </div>
 
         { isLoading ?

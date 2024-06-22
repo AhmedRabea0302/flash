@@ -8,7 +8,7 @@ import MainLayout from "./Layouts/MainLayout";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/HomePage";
 import { PaymentPage } from "./pages/PaymentPage";
-import DownloadAppPage from "./pages/DownloadPAppage";
+import DownloadAppPage from "./pages/DownloadAppPage";
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
