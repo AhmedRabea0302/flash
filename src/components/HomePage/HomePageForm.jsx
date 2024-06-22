@@ -1,15 +1,44 @@
 
+import { useState } from "react";
 import { RiDiscountPercentFill } from "react-icons/ri";
 
 const HomePageForm = () => {
+
+    // Form Initial Values
+    const initialValues = {
+        phone_number: ''
+    };
+
+    // Form state
+    const [formFields, setFormFields] = useState(initialValues);
+    
+    // Handle form fields change
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormFields({
+          ...formFields,
+          [name]: value,
+        });
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        console.log(formFields);
+    }
+
   return (
     <div className="items-start">
       <p className="text-[#2C2C84] text-sm font-[500] mb-3">What’s your number?</p>
-      <form action="">
+      <form 
+        onSubmit={handleSubmit} 
+        onChange={(e) => handleChange(e)}
+        >
         <div className="flex flex-col">
             <input 
                 type="text" 
                 name="phone_number"
+                value={formFields.phone_number}
                 placeholder="01XXXXXXXX" 
                 className="h-[45px] border-solid border-2 rounded-lg border-[#CBF15E] focus:border-[#2C2C84] focus:outline-none indent-3 mb-1"
             />
