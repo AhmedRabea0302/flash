@@ -46,13 +46,15 @@ const HomePageForm = () => {
                 await checkIfUserIsRegistered(formFields.phone_number)
                 .then((data) => {
                     if (data.length === 0) {
+                        localStorage.removeItem("user");
                         navigate("/download-app");
                     } else if (data && data.length > 0) {
-                        debugger
                         authenticateUser()
                         .then((response) => {
-                            debugger
                             if(response.access_token) {
+                                data[0].access_token = response.access_token;
+                                debugger
+                                localStorage.setItem("user", JSON.stringify(data));
                                 navigate("/payment");
                             }
                         })
