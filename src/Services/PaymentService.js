@@ -20,9 +20,6 @@ const createOrder = async () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data) {
-          localStorage.setItem("user", JSON.stringify(data));
-        }
         return data;
       });
     return loginData;

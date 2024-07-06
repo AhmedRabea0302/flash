@@ -7,7 +7,7 @@ import { getUserService } from '../Services/UsersService';
 import { useState } from "react";
 import { FaCircleExclamation } from "react-icons/fa6";
 import createOrder from '../Services/PaymentService';
-
+import PaymentModal from '../components/PaymentModal';
 
 export const PaymentPage = () => {
   const user = getUserService();
@@ -21,6 +21,8 @@ export const PaymentPage = () => {
 
   // Form state
   const [formFields, setFormFields] = useState(initialValues);
+  const [paymentData, setPaymentData] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   // Handle form fields change
   const handleChange = (e) => {
@@ -40,7 +42,8 @@ export const PaymentPage = () => {
       .then((data) => {
         setIsLoading(false);
         if (data.status == "completed") {
-          alert(data.status);          
+          setShowModal(true);  
+          setPaymentData(data);  
         }
         return data
       })
@@ -56,6 +59,14 @@ export const PaymentPage = () => {
 
   return (
     <div className="flex flex-row h-screen w-6/12 m-auto justify-center items-start" style={{ alignItems: 'center' }}>
+      {showModal && 
+        <PaymentModal 
+          showModal={showModal} 
+          setShowModal={setShowModal} 
+          paymentData={paymentData}
+        />
+      }
+
       <div className="flex flex-col ">
         <div className="mb-8">
             <img src={FlashArrows} alt="" className="h-35 w-42 mb-4 font-raleway"/>
