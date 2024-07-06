@@ -53,8 +53,7 @@ const HomePageForm = () => {
                         .then((response) => {
                             if(response.access_token) {
                                 data[0].access_token = response.access_token;
-                                debugger
-                                localStorage.setItem("user", JSON.stringify(data));
+                                localStorage.setItem("user", JSON.stringify(data[0]));
                                 navigate("/payment");
                             }
                         })

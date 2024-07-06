@@ -44,7 +44,14 @@ const authenticateUser = async () => {
     }
 };
 
+// Get User Info service
+const getUserService = () => {
+    return JSON.parse(localStorage.getItem("user"));
+};
+
+  
 export {
     checkIfUserIsRegistered,
-    authenticateUser
+    authenticateUser,
+    getUserService
 }

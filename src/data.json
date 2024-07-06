@@ -60,5 +60,18 @@
             "first_name": "AbdelAziz",
             "last_name": "Matar"
         }
+    ],
+    "orders": [
+        {
+            "integrationId": 58328228,
+            "aggregatorOrderId": "94fd204c-4f44-477a-8339-471cf6ed41f2",   
+            "description": "Order for product xyz",
+            "customer": {
+                "phone": "+20100456432222"
+            },
+            "amountCents": 5000,
+            "currency": "EGP",
+            "status": "completed"
+        }
     ]
 }

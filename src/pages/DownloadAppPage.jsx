@@ -5,7 +5,7 @@ import { DiscountComponent } from '../components/DiscountComponent';
 
 const DownloadAppPage = () => {
   return (
-    <div className="flex flex-row h-screen w-5/12 m-auto justify-center" style={{ alignItems: 'center' }}>
+    <div className="flex flex-row h-screen w-6/12 m-auto justify-center" style={{ alignItems: 'center' }}>
       <div className="flex flex-col ">
         <div className="mb-8">
             <img src={FlashArrows} alt="" className="h-35 w-42 mb-4 font-raleway"/>
@@ -19,7 +19,7 @@ const DownloadAppPage = () => {
 
         <DiscountComponent />
       </div>
-
+      <div className="w-2/12"></div>
       <div>
         <img 
           src={QrCodeImage} 
